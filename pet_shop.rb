@@ -33,16 +33,24 @@ def pets_by_breed(pet_shop, breed_wanted)
 end
 
 def find_pet_by_name(pet_shop, name)
-
   new_hash = Hash.new()
-
   for pet in pet_shop[:pets]
     if pet[:name] == name
     new_hash = {name: name}
     end
   end 
+  if new_hash == {}  #possible to do shorter?
+    return nil
+  else
+    return new_hash
+  end
+end
 
-  return new_hash
-  
+def remove_pet_by_name(pet_shop, name)
+  for pet in pet_shop[:pets]
+    if pet[:name] == name
+      pet_shop[:pets].delete(pet)
+    end
+  end
 end
 
