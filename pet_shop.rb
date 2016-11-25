@@ -24,17 +24,25 @@ end
 
 def pets_by_breed(pet_shop, breed_wanted)
   new_array = []
-  
   for pet in pet_shop[:pets]
     if pet[:breed] == breed_wanted
       new_array.push(breed_wanted)
     end
   end
-
-  return new_array
-
+    return new_array
 end
 
+def find_pet_by_name(pet_shop, name)
 
+  new_hash = Hash.new()
 
+  for pet in pet_shop[:pets]
+    if pet[:name] == name
+    new_hash = {name: name}
+    end
+  end 
+
+  return new_hash
+  
+end
 
